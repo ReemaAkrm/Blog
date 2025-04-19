@@ -1,0 +1,147 @@
+            body {
+                font-size: 16px;
+            }
+            
+            .header {
+                background-color: hsl(353, 100%, 62%);
+                background-position: right;
+                background-size: cover;
+                text-align: center;
+                color: white;
+            }
+            
+            .nav-link.dropdown-toggle::after {
+                display: none !important;
+            }
+            
+            .dropdown-item:hover {
+                font-weight: bold;
+            }
+            
+            h1,
+            p {
+                font-family: 'Overpass', sans-serif;
+            }
+            
+            h1,
+            h2 {
+                font-weight: 600;
+            }
+            
+            p {
+                font-weight: 500;
+            }
+            
+            .navbarNav,
+            h2,
+            a,
+            .btn {
+                font-family: 'Ubuntu', sans-serif;
+            }
+            
+            .container img {
+                margin-right: 30px;
+            }
+            
+            .btn-outline-secondary:hover {
+                background: hsl(355, 100%, 74%)!important;
+                color: hsl(0, 0%, 100%) !important;
+            }
+            
+            .btn-outline-light:hover {
+                background: white !important;
+                color: hsl(13, 100%, 72%) !important;
+            }
+            
+            .dropdown-menu.show {
+                display: block;
+            }
+            
+            .custom-section {
+                background-color: #3b3054;
+                color: hsl(0, 0%, 100%);
+                border-top-right-radius: 200px;
+                border-bottom-left-radius: 200px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .custom-img-container {
+                position: relative;
+            }
+            
+            .bg-circles {
+                position: absolute;
+                top: -300px;
+                left: -350px;
+                clip-path: inset(53% 0 10% 0);
+                transform: translateY(-150px);
+            }
+            
+            .phone-img {
+                z-index: 2;
+                transform: translateY(20px);
+                width: 100%;
+            }
+            
+            .img-fluid {
+                transform: translateX(-20px) scale(1.4);
+            }
+            
+            .footer {
+                background-color: hsl(240, 10%, 16%);
+                color: hsl(240, 2%, 79%);
+            }
+            
+            .footer li a {
+                color: hsl(240, 2%, 79%);
+                text-decoration: none;
+            }
+            
+            .footer li {
+                margin-bottom: 10px;
+            }
+            
+            @media (max-width: 767px) {
+                .navbar-collapse.show {
+                    background-color: white;
+                    padding: 15px;
+                    border-radius: 30px;
+                }
+                .navbar-nav .nav-link,
+                .navbar-nav .dropdown-item {
+                    color: black !important;
+                }
+                .dropdown-menu {
+                    background: rgb(224, 224, 224);
+                }
+                .custom-section .row {
+                    flex-direction: column;
+                    text-align: center;
+                    text-wrap: wrap;
+                }
+                .custom-section {
+                    height: 700px !important;
+                    margin-top: 50px !important;
+                }
+                .custom-img-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .bg-circles {
+                    position: absolute;
+                    top: -510px;
+                    left: -450px;
+                    transform: scale(.5);
+                    clip-path: inset(25% 0% 0% 0%);
+                }
+                .phone-img {
+                    margin-right: 0px;
+                    transform: scale(2.5) translateY(-50px);
+                }
+                .container-fluid {
+                    padding-bottom: 50px;
+                }
+            }
