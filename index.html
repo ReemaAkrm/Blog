@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+00<!DOCTYPE html>
 <html lang="ar">
 
 <head>
@@ -197,26 +197,55 @@
     </footer>
 
 
-
-    <script>
-        const toggler = document.getElementById('navbarToggler');
-        const menuIcon = document.getElementById('menuIcon');
-        const navbar = document.getElementById('navbarNav');
-
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggler = document.getElementById("navbarToggler");
+        const menuIcon = document.getElementById("menuIcon");
+        const navbarNav = document.getElementById("navbarNav");
+        const dropdownToggles = document.querySelectorAll('.nav-link.dropdown-toggle');
         let isOpen = false;
 
-        toggler.addEventListener('click', function() {
-            isOpen = !isOpen;
+        toggler.addEventListener("click", function () {
+            navbarNav.classList.toggle("show");
 
+            const isOpenClass = navbarNav.classList.contains("show");
+
+            menuIcon.src = isOpenClass ? "images/icon-close.svg" : "images/icon-hamburger.svg";
+
+            dropdownToggles.forEach(toggle => {
+                let arrowIcon = toggle.querySelector("img");
+                if (arrowIcon) {
+                    arrowIcon.src = isOpenClass ? "images/icon-arrow-dark.svg" : "images/icon-arrow-light.svg";
+                }
+            });
+
+            isOpen = !isOpen;
             if (isOpen) {
-                navbar.style.display = 'block';
+                navbarNav.style.display = 'block';
                 menuIcon.src = 'images/icon-close.svg';
             } else {
-                navbar.style.display = 'none';
+                navbarNav.style.display = 'none';
                 menuIcon.src = 'images/icon-hamburger.svg';
             }
         });
-    </script>
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                const dropdownMenu = this.nextElementSibling;
+
+                dropdownToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle && otherToggle.nextElementSibling) {
+                        otherToggle.nextElementSibling.classList.remove("show");
+                    }
+                });
+
+               dropdownMenu.classList.toggle("show");
+            });
+        });
+    });
+</script>
+
 
 
 
